@@ -2,6 +2,46 @@
 
 This project is a fully functional backend for managing payroll operations under Colombian labor regulations. It includes monthly payroll generation, legal and voluntary bonuses, and annual reporting using a clean architecture with raw SQL and no ORMs.
 
+## 📦 Modules Implemented
+
+The system is divided into the following functional modules:
+
+1. **Employees**
+
+   - Register and list company employees
+   - Assign position and department
+
+2. **Salaries**
+
+   - Assign salary and transport aid per year per employee
+   - Validate per-year registration to avoid duplication
+
+3. **Payroll**
+
+   - Generate monthly payrolls based on current salary
+   - Automatically calculate deductions (health, pension, ARL)
+   - Store totals and breakdowns
+
+4. **Payroll Details**
+
+   - Store itemized breakdown: base salary, transport aid, deductions
+   - Consult details by payroll ID
+
+5. **Legal Bonuses (Primas)**
+
+   - Generate June and December legal bonuses based on semester earnings
+   - Register only once per semester/year per employee
+
+6. **Voluntary Bonuses**
+
+   - Register annual bonuses manually with justification
+   - Consult per year or per employee
+
+7. **Reports**
+   - Monthly global summary of payroll
+   - Payroll history for individual employees
+   - Yearly summary per employee
+
 ## ✅ Features
 
 - Register employees and assign positions/departments
