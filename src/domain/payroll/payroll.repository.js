@@ -1,6 +1,16 @@
 import db from "../../infrastructure/db/mysql.connection.js";
 
 export class PayrollRepository {
+  async getPayroll(employee_id, year, month) {
+    const [rows] = await db.execute(
+      `SELECT id, employee_id, year, month, total_earned, total_deductions, net_salary, generated_at
+       FROM payroll
+       WHERE employee_id = ? AND year = ? AND month = ?`,
+      [employee_id, year, month]
+    );
+    return rows[0] || null;
+  }
+
   async checkExists(employee_id, year, month) {
     const [rows] = await db.execute(
       `SELECT id FROM payroll WHERE employee_id = ? AND year = ? AND month = ?`,

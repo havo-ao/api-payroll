@@ -35,4 +35,8 @@ export class PayrollService {
 
     return { id, ...payroll };
   }
+
+  async getPayroll(employee_id, year, month) {
+    return await this.repository.getPayroll(employee_id, year, month);
+  }
 }

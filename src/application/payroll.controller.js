@@ -11,3 +11,22 @@ export const generatePayroll = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+export const getPayroll = async (req, res) => {
+  const { employeeId, year, month } = req.params;
+
+  try {
+    const payroll = await service.getPayroll(
+      parseInt(employeeId),
+      parseInt(year),
+      parseInt(month)
+    );
+    if (!payroll)
+      return res
+        .status(404)
+        .json({ message: "No payroll found for this period" });
+    res.json(payroll);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
