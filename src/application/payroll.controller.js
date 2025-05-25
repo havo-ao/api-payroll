@@ -30,3 +30,19 @@ export const getPayroll = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const getPayrollDetails = async (req, res) => {
+  const payroll_id = parseInt(req.params.payrollId);
+
+  try {
+    const details = await service.getDetails(payroll_id);
+    if (details.length === 0) {
+      return res
+        .status(404)
+        .json({ message: "No details found for this payroll ID" });
+    }
+    res.json(details);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};

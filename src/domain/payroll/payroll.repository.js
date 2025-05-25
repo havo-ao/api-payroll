@@ -83,4 +83,14 @@ export class PayrollRepository {
       );
     }
   }
+
+  async getDetails(payroll_id) {
+    const [rows] = await db.execute(
+      `SELECT concept, amount, type
+       FROM payroll_details
+       WHERE payroll_id = ?`,
+      [payroll_id]
+    );
+    return rows;
+  }
 }
