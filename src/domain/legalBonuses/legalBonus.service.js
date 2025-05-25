@@ -1,5 +1,5 @@
-import { LegalBonusRepository } from "./bonus.repository.js";
-import { LegalBonus } from "./bonus.entity.js";
+import { LegalBonusRepository } from "./legalBonus.repository.js";
+import { LegalBonus } from "./legalBonus.entity.js";
 
 export class LegalBonusService {
   constructor() {

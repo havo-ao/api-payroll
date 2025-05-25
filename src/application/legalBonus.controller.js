@@ -1,9 +1,10 @@
-import { BonusService } from "../../domain/bonuses/bonus.service.js";
-const service = new BonusService();
+import { LegalBonusService } from "../../domain/legalBonuses/bonus.service.js";
+const service = new LegalBonusService();
 
 export const registerBonus = async (req, res) => {
+  const { employee_id, year, period } = req.body;
   try {
-    const result = await service.register(req.body);
+    const result = await service.register({ employee_id, year, period });
     res.status(201).json(result);
   } catch (err) {
     res.status(400).json({ error: err.message });
