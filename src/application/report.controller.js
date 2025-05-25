@@ -1,4 +1,5 @@
-import { ReportService } from "../../domain/reports/report.service.js";
+import { ReportService } from "../domain/reports/report.service.js";
+
 const service = new ReportService();
 
 export const getMonthlyReport = async (req, res) => {

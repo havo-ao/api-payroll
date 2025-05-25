@@ -1,4 +1,5 @@
-import { SalaryService } from "../../domain/salaries/salary.service.js";
+import { SalaryService } from "../domain/salaries/salary.service.js";
+
 const service = new SalaryService();
 
 export const registerSalary = async (req, res) => {

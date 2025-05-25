@@ -1,4 +1,5 @@
-import { EmployeeService } from "../../domain/employees/employee.service.js";
+import { EmployeeService } from "../domain/employees/employee.service.js";
+
 const service = new EmployeeService();
 
 export const registerEmployee = async (req, res) => {

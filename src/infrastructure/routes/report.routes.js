@@ -3,7 +3,7 @@ import {
   getMonthlyReport,
   getEmployeeHistory,
   getEmployeeAnnualSummary,
-} from "../../application/reports/report.controller.js";
+} from "../../application/report.controller.js";
 
 const router = express.Router();
 

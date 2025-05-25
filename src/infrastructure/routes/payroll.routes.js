@@ -3,7 +3,7 @@ import {
   generatePayroll,
   getPayroll,
   getPayrollDetails,
-} from "../../application/payroll/payroll.controller.js";
+} from "../../application/payroll.controller.js";
 
 const router = express.Router();
 router.post("/generate", generatePayroll);

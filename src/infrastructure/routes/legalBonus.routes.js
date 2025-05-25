@@ -3,7 +3,7 @@ import {
   registerBonus,
   getBonusesByYear,
   getBonusesByEmployee,
-} from "../../application/legalBonuses/legalBonus.controller.js";
+} from "../../application/legalBonus.controller.js";
 
 const router = express.Router();
 router.post("/register", registerBonus);

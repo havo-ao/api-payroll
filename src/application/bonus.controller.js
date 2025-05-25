@@ -1,4 +1,5 @@
-import { BonusService } from "../../domain/bonuses/bonus.service.js";
+import { BonusService } from "../domain/bonuses/bonus.service.js";
+
 const service = new BonusService();
 
 export const registerBonus = async (req, res) => {

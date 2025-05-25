@@ -1,5 +1,6 @@
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 const db = mysql.createPool({
@@ -8,5 +9,9 @@ const db = mysql.createPool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 });
+
+db.getConnection()
+  .then(() => console.log("✅ Connected to MariaDB"))
+  .catch((err) => console.error("❌ DB Connection Error:", err.message));
 
 export default db;

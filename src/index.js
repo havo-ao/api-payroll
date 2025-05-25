@@ -1,5 +1,6 @@
-import app from "./config/express.js";
 import dotenv from "dotenv";
+import app from "./config/express.js";
+
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;

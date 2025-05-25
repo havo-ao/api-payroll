@@ -2,11 +2,11 @@ import express from "express";
 import {
   registerEmployee,
   listEmployees,
-} from "../../application/employees/employee.controller.js";
+} from "../../application/employee.controller.js";
 import {
   registerSalary,
   listSalaries,
-} from "../../application/salaries/salary.controller.js";
+} from "../../application/salary.controller.js";
 
 const router = express.Router();
 router.post("/", registerEmployee);

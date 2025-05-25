@@ -1,4 +1,5 @@
-import { PayrollService } from "../../domain/payroll/payroll.service.js";
+import { PayrollService } from "../domain/payroll/payroll.service.js";
+
 const service = new PayrollService();
 
 export const generatePayroll = async (req, res) => {
