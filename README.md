@@ -37,7 +37,13 @@ The system is divided into the following functional modules:
    - Register annual bonuses manually with justification
    - Consult per year or per employee
 
-7. **Reports**
+7. **Severance (Cesantías)**
+
+   - Generate annual severance and interest in February based on hire date and time worked
+   - Also supports proportional calculation in case of early termination using a custom end date
+   - One record per employee per year
+
+8. **Reports**
    - Monthly global summary of payroll
    - Payroll history for individual employees
    - Yearly summary per employee
@@ -51,6 +57,7 @@ The system is divided into the following functional modules:
 - Handle **legal bonuses** (prima) per semester (June, December)
 - Register and consult **voluntary bonuses**
 - Generate monthly and yearly payroll reports
+- Generate and consult **severance** and **interest on severance** calculated in February for the previous year or at the moment of employee resignation, using proportional time worked
 - Architecture follows **Domain-Driven Design (DDD)**
 - All logic runs with **pure SQL using `mysql2/promise`**
 
@@ -142,6 +149,14 @@ node src/index.js
 | POST   | `/api/bonuses/register`          | Register annual bonus |
 | GET    | `/api/bonuses/:year`             | List all for year     |
 | GET    | `/api/bonuses/:employeeId/:year` | List by employee/year |
+
+### 💼 Severance
+
+| Method | Endpoint                           | Description                         |
+| ------ | ---------------------------------- | ----------------------------------- |
+| POST   | `/api/severance/generate`          | Generate severance and interests    |
+| GET    | `/api/severance/:year`             | List all severance records for year |
+| GET    | `/api/severance/:employeeId/:year` | Get severance record for employee   |
 
 ### 📊 Reports
 
