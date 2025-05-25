@@ -3,9 +3,15 @@ import {
   registerEmployee,
   listEmployees,
 } from "../../application/employees/employee.controller.js";
+import {
+  registerSalary,
+  listSalaries,
+} from "../../application/salaries/salary.controller.js";
 
 const router = express.Router();
 router.post("/", registerEmployee);
 router.get("/", listEmployees);
+router.post("/:id/salary", registerSalary);
+router.get("/:id/salary", listSalaries);
 
 export default router;
