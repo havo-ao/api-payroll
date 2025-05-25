@@ -1,4 +1,5 @@
 import { LegalBonusRepository } from "./bonus.repository.js";
+import { LegalBonus } from "./bonus.entity.js";
 
 export class LegalBonusService {
   constructor() {
@@ -17,9 +18,15 @@ export class LegalBonusService {
     if (total === 0) throw new Error("No payroll data to calculate bonus");
 
     const amount = total / 2;
-    const id = await this.repository.insert(employee_id, year, period, amount);
+    const bonus = new LegalBonus({ employee_id, year, period, amount });
+    const id = await this.repository.insert(
+      bonus.employee_id,
+      bonus.year,
+      bonus.period,
+      bonus.amount
+    );
 
-    return { id, employee_id, year, period, amount };
+    return { id, ...bonus };
   }
 
   async listByYear(year) {
